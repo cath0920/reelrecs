@@ -134,6 +134,7 @@ h1 {
     font-size: 40px;
     margin-top: 20px;
     text-align: left;
+    letter-speacing: -0.06em;
  }
 
  h3{

@@ -11,8 +11,6 @@ h1 {
     font-size:75px; 
 }
 
-
-
 .container{
     display: flex;
     flex-direction:row;
@@ -20,6 +18,14 @@ h1 {
     text-align: center;
     margin-top: 75px;
     width: 90%;
+}
+
+.dropdown:hover .dropdown-content{
+    display: block;
+}
+
+select:hover{
+    background-color: #2d2d2d;
 }
 
 .dropdown {
@@ -89,14 +95,13 @@ h1 {
 
  .container-head h1{
     margin: 0;
-    font-size: 75;
+    font-size: 75px;
  }
 
  .result-container{
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
-    padding: 30px;
  }
  
  .result{
@@ -105,20 +110,17 @@ h1 {
     font-family: Arial, "Helvetica", sans-serif;
     display: block;
     line-height: 1.5px;
-    padding: 10px;
-
  }
  
  .centered-image {
     display: block;
     padding-top: 2%;
     margin: 10px auto;
-    width: 700px;
  }
  h2{
     color: #ccc;
     font-family: Arial, "Helvetica", sans-serif;
-    font-size: 34px;
+    font-size: 42px;
     margin-top: 20px;
     letter-spacing: -0.06em;
     text-align: left;
@@ -127,31 +129,31 @@ h1 {
  h3{
     color: #ccc;
     font-family: Arial, "Helvetica", sans-serif;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 100;
+    letter-spacing: 0.01em;
     text-align: justify;
-    margin-top: 5px;
+    margin-top: -25px;
     font-style: italic;
  }
 
  h4{
     color: #ccc;
-    color: #ccc;
     font-family: Arial, "Helvetica", sans-serif;
-    font-size: 16px;
-    font-weight: 100;
+    font-size: 18px;
+    font-weight: 180;
     text-align: left;
     margin-top: 10px;
-    letter-spacing: -0.06em;
  }
 
  h5{
     color: #ccc;
     font-family: Arial, "Helvetica", sans-serif;
     font-size: 16px;
-    font-weight: 100;
+    font-weight: 80;
     margin-top: 10px;
     text-align: left;
+    letter-spacing: -0.06em;
  }
 
  p{
@@ -197,6 +199,7 @@ h1 {
     max-width: 1000px;
 
 }
+
 
 @media only screen and (max-width: 768px) {
     h1 {

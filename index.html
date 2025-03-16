@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<html>
 <head>
     <link rel="stylesheet" href="gdstylesheet.css">
     <meta charset="UTF-8">
@@ -12,32 +11,30 @@
     <h1><i class="fas fa-circle"></i> Reel Recs</h1>
 </div>
     
-    <div class="container"> 
-        <label for="mood"></label>
-        <select id="mood" class="dropdown" name="mood">
-            <option selected disabled>Choose your mood</option>
-            <option value="A">Cheeky</option>
-            <option value="B">Disillusioned</option>
-            <option value="C">Fragile</option>
-        </select>
+<div class="container"> 
+    <select id="mood" class="dropdown" name="mood">
+        <option selected disabled>Choose your mood</option>
+        <option value="A">Cheeky</option>
+        <option value="B">Disillusioned</option>
+        <option value="C">Fragile</option>
+    </select>
+    
+    <select id="genre" class="dropdown" name="genre">
+        <option selected disabled>Choose a genre</option>
+        <option value="V">Coming of Age</option>
+        <option value="W">Drama</option>
+        <option value="X">Kissing</option>
+        <option value="Y">Thriller</option>
+        <option value="Z">War</option>
+    </select>
+   </div>
 
-        <label for="genre"></label>
-        <select id="genre" class="dropdown" name="genre">
-            <option selected disabled>Choose a genre</option>
-            <option value="V">Coming of Age</option>
-            <option value="W">Drama</option>
-            <option value="X">Kissing</option>
-            <option value="Y">Thriller</option>
-            <option value="Z">War</option>
-        </select>
-       </div>
-       
     <div class="button-container">
         <button class="button" onclick="showResult()"> <i class="fas fa-circle" style="font-size: 16px; color: red"></i> Rec</button>
     </div>
     <div id="result" class="result-container">
         <div class="result-item">
-            <img src="" class="result-image" />
+            <img src="" class = "result-image">
             <div class="result-text">
                 <h2 class="result-title"></h2>
                 <h3 class="result-year"></h3>
@@ -45,12 +42,12 @@
                 <h5 class="result-starring"></h5>
                 <p class="result-description"></p>
             </div>
-        </div>
     </div>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 <script>
     function showResult(){
+    
         let value1= document.getElementById ("mood").value;
         let value2= document.getElementById ("genre").value;
         let resultDiv= document.getElementById ("result");
@@ -333,13 +330,13 @@
                     runtime: "238 min",
                     starring: "Clark Gable, Vivien Leigh, Leslie Howard, and Olivia de Havilland",
                     description: "As the Civil War destroys the societal foundation of Georgia, a spoiled and manipulative Southern belle navigates death and loss of innocence through poverty and complicated love affairs as she attempts to rebuild her life.",
-                    image: "iamges/gonewind.jpg"
+                    image: "images/gonewind.jpg"
                 },
                 {
                     title: "Casablanca",
                     year: "1942",
                     runtime: "102 min",
-                    starring: "Humphray Bogart, Ingrid Bergman, and Paul Henreid",
+                    starring: "Humphrey Bogart, Ingrid Bergman, and Paul Henreid",
                     description: "An expatriate American cafe owner in French Morocco confronts his feelings for his former lover as he decides if he should help her husband, Czechoslovak resistance leader, escape the Nazis.",
                     image: "images/casablanca.jpg"
                 }
@@ -357,16 +354,17 @@
                 <div class="result-text">
                     <h2 class="result-title">${chosenResult.title}</h2>
                     <h3 class="result-year">${chosenResult.year}</h3>
-                    <h4 class="result-runtime"><i class="fas fa-clock" style= "font-size: 12px"> </i> ${chosenResult.runtime}</h4>
-                    <h5 class="result-starring"> <i class= "fas fa-star" style="font-size: 12px"> </i> ${chosenResult.starring}</h5>
-                    <p class="result-description">${chosenResult.description}</p>
+                    <h4 class="result-starring"> <i class= "fas fa-star" style="font-size: 14px"> </i> ${chosenResult.starring}</h4>
+                    <h5 class="result-runtime"><i class="fas fa-clock" style= "font-size: 14px"> </i> ${chosenResult.runtime}</h5>
+                    <p class="result-description"> <i class="fas fa-film" style= "font-size: 14px"> </i> ${chosenResult.description}</p>
                 </div>
             </div>
-            `;
+        `;
 
-        } else {
-            resultDiv.textContent = "Invalid Selection!";
-        }
+    } else {
+        resultDiv.textContent = "Please choose a mood and a genre";
+    }
+    hideSpinner();
     }
 </script>     
 </body>

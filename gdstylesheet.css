@@ -48,22 +48,16 @@ h1 {
     min-width: 160px;
     z-index: 1000;
 }
+
+.dropdown-content a{
+    color:#ccc;
+}
   
-  .dropdown:hover .dropdown-content{
-    display: block;
-  }
-  .dropdown-content a{
-    color: rgb(142, 38, 109);
-    text-decoration: none;
-    padding: 10px;
-  }
+.dropdown-content a:hover{
+    color: red;
+}
  
- 
-.dropdown-content a:hover {
-    color:rgb(255, 0, 0)
-  }
- 
- .button-container{
+.button-container{
     display: flex;
     justify-content:flex-end;
     margin-top: 40px;
@@ -83,6 +77,7 @@ h1 {
   padding-bottom: 0.5%;
   border: 2px solid #ccc;
   margin-top: 30px;
+  transition: background-color 0.3s ease;
  }
 
  .container-head{

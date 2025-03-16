@@ -194,3 +194,84 @@ h1 {
 .result-description {
     margin-right: 10%;
 }
+
+@media only screen and (max-width: 768px) {
+    h1 {
+        font-size: 50px; 
+    }
+
+    .container {
+        flex-direction: row; 
+    
+    }
+
+    .dropdown {
+        width: 48%; 
+        font-size: 14px; 
+    }
+
+    .button-container {
+        padding-right: 10%;
+    }
+
+    .button {
+        width: 48%;
+        font-size: 14px;
+    }
+
+    .result-item {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .result-title{
+        font-size: 22px;
+        text-align: center;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .result-year{
+        font-size: 14px;
+        text-align: center;
+        margin-top: -3px;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .result-starring{
+        font-size: 14px;
+        text-align: center;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: 0px;
+    }
+    .result-runtime{
+        font-size: 14px;
+        text-align: center;
+        margin-top: -9px;
+        margin-bottom: 5px;
+        margin-left: 10%;
+    }
+
+    .result-image {
+        max-width: 300px;
+        margin-left: 10%;
+        margin-right: 10%;
+        display: block;
+        align-items: center;
+        
+    
+    }
+    .result-description{
+        font-size: 12px;
+        text-align: left;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-top: 18px;
+    }
+    .result-text {
+        max-width: 700px;
+        line-height: 18px;
+    }
+}

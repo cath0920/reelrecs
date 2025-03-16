@@ -220,8 +220,11 @@ h1 {
     }
 
     .result-item {
+        display: flex;
         flex-direction: column;
         width: 100%;
+        justify-content: center;
+        margin: 20px;
     }
 
     .result-title{
@@ -240,7 +243,7 @@ h1 {
     }
 
     .result-starring{
-        font-size: 14px;
+        font-size: 12px;
         text-align: center;
         margin-left: 10%;
         margin-right: 10%;
@@ -255,12 +258,10 @@ h1 {
     }
 
     .result-image {
-        max-width: 300px;
-        margin-left: 10%;
-        margin-right: 10%;
+        width: 100%;
         display: block;
-        align-items: center;
-        
+        margin: 10px;
+    
     
     }
     .result-description{

@@ -6,17 +6,19 @@ h1 {
     letter-spacing: -0.06em;
     text-align: left;
     padding-left: 10px;
-    padding-top: 0.1%;
+    padding-top: 25px;
     color: white;
     font-size:75px; 
 }
+
+
 
 .container{
     display: flex;
     flex-direction:row;
     margin:auto;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 75px;
     width: 90%;
 }
 
@@ -218,6 +220,7 @@ h1 {
     .button {
         width: 48%;
         font-size: 14px;
+        text-align: center;
     }
 
     .result-item {

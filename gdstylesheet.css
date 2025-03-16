@@ -192,6 +192,7 @@ h1 {
 }
 
 .result-description {
+    max-width: 1000px;
 
 }
 

@@ -238,12 +238,13 @@ select:hover{
         text-align: center;
         margin-left: 10%;
         margin-right: 10%;
+        line-height: 34px;
     }
 
     .result-year{
         font-size: 26px;
         text-align: center;
-        margin-top: -1px;
+        margin-top: -15px;
         margin-left: 10%;
         margin-right: 10%;
         margin-bottom: 20px;
@@ -275,7 +276,8 @@ select:hover{
     }
     .result-description{
         font-size: 16px;
-        text-align:left;
+        text-align:center;
+        display: block;
         margin-left: 5%;
         margin-top: 18px;
     }

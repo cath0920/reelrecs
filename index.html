@@ -10,10 +10,12 @@
     <div class="container-head">
     <h1><i class="fas fa-circle"></i> Reel Recs</h1>
 </div>
+<!-- the red circle is supposed to align with the Reel Recs title, mimicking record button on a camera or remote-->
     
 <div class="container"> 
     <select id="mood" class="dropdown" name="mood">
         <option selected disabled>Choose your mood</option>
+        <!-- selected disabled is to ensure the default option is "Choose your mood"-->
         <option value="A">Cheeky</option>
         <option value="B">Disillusioned</option>
         <option value="C">Fragile</option>
@@ -21,6 +23,7 @@
     
     <select id="genre" class="dropdown" name="genre">
         <option selected disabled>Choose a genre</option>
+          <!-- selected disabled is to ensure the default option is "Choose your genre"-->
         <option value="V">Coming of Age</option>
         <option value="W">Drama</option>
         <option value="X">Kissing</option>
@@ -28,9 +31,11 @@
         <option value="Z">War</option>
     </select>
    </div>
+   <!-- each mood and genre value is assigned a letter (A-C; V-Z, respectively), each pair of values produces 1 of 2 results (movie results) that align with selected values-->
 
     <div class="button-container">
         <button class="button" onclick="showResult()"> <i class="fas fa-circle" style="font-size: 16px; color: red"></i> Rec</button>
+        <!-- rec button acts as show results button with double entendre of recommend and record, pressing this button again will give the user the alternative result for the chosen variables -->
     </div>
     <div id="result" class="result-container">
         <div class="result-item">
@@ -43,7 +48,7 @@
                 <p class="result-description"></p>
             </div>
     </div>
-
+<!-- each result is accompanied by descriptive elements-->
 <script src="script.js"></script>
 <script>
     function showResult(){
@@ -68,7 +73,7 @@
                     year: "1964",
                     runtime: "170 min",
                     starring: "Audrey Hepburn, Rex Harrison, and Stanley Holloway",
-                    description: "In a musical adaptation of George Bernard Shaw’s 'Pygmalion' a snobby phonetician endeavours to teach a lower-class flower girl how to be presentable in high society on a wager."
+                    description: "In a musical adaptation of George Bernard Shaw’s 'Pygmalion,' a snobby phonetician endeavours to teach a lower-class flower girl how to be presentable in high society on a wager."
                 }
             ],
            
@@ -129,7 +134,6 @@
                         image:"images/caligari.jpg"
                     }                 
             ],
-          
             
             "A-Z": [
                 {
@@ -341,12 +345,14 @@
                     image: "images/casablanca.jpg"
                 }
             ]
+            
           };
         
           let key = `${value1}-${value2}`;
           if (outcomes [key]){
             let randomIndex = Math.floor(Math.random() *2);
             let chosenResult=outcomes [key][randomIndex];
+            //the math.random is set to pick from 2 since there are only 2 potential results for each pair of values, but if/when the website is updated to include more potential films I will change this to outcomes[key].length
             
             resultDiv.innerHTML = `
             <div class="result-item">
@@ -360,11 +366,13 @@
                 </div>
             </div>
         `;
+        // each descriptive element is preceded by an icon that intuitively describes the descriptive element, the icon formats are styled inline here for no particular reason
 
     } else {
         resultDiv.textContent = "Please choose a mood and a genre";
     }
-    hideSpinner();
+    // hideSpinner();
+         // hideSpinner is from a failed animation attempt
     }
 </script>     
 </body>

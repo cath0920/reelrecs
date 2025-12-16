@@ -374,5 +374,21 @@
     // hideSpinner();
          // hideSpinner is from a failed animation attempt
     }
+
+    // next.config.js
+async headers() {
+  return [
+    {
+      source: '/(.*)',
+      headers: [
+        {
+          key: 'Content-Security-Policy',
+          value: "frame-ancestors https://portfolio.adobe.com https://*.myportfolio.com"
+        }
+      ],
+    },
+  ]
+}
 </script>     
 </body>
+

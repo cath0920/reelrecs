@@ -1,13 +1,1 @@
-{
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Content-Security-Policy",
-          "value": "frame-ancestors https://portfolio.adobe.com https://*.myportfolio.com"
-        }
-      ]
-    }
-  ]
-}
+

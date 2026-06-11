@@ -4,11 +4,12 @@
     <link rel="stylesheet" href="gdstylesheet.css">
     <meta charset="UTF-8">
     <meta name= "viewport" content="width=device-width, initial-scale=1.0"/>
-    <script src="https://kit.fontawesome.com/d65cdef581.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/80e261a762.js" crossorigin="anonymous"></script>
+    <!--<script src="https://kit.fontawesome.com/d65cdef581.js" crossorigin="anonymous"></script> -->
 </head>
 <body>
     <div class="container-head">
-    <h1><i class="fas fa-circle"></i> Reel Recs</h1>
+    <h1><i class="fas fa-circle" style="color: red; font-size: 65px"></i> Reel Recs</h1>
 </div>
 <!-- the red circle is supposed to align with the Reel Recs title, mimicking record button on a camera or remote-->
     
@@ -29,12 +30,13 @@
         <option value="X">Kissing</option>
         <option value="Y">Thriller</option>
         <option value="Z">War</option>
+        <option value="U">Sci-Fi</option>
     </select>
    </div>
    <!-- each mood and genre value is assigned a letter (A-C; V-Z, respectively), each pair of values produces 1 of 2 results (movie results) that align with selected values-->
 
     <div class="button-container">
-        <button class="button" onclick="showResult()"> <i class="fas fa-circle" style="font-size: 16px; color: red"></i> Rec</button>
+        <button class="button" onclick="showResult()"> <i class="fas fa-circle" style="font-size: 18px; color: red"></i> Rec</button>
         <!-- rec button acts as show results button with double entendre of recommend and record, pressing this button again will give the user the alternative result for the chosen variables -->
     </div>
     <div id="result" class="result-container">
@@ -49,6 +51,10 @@
             </div>
     </div>
 <!-- each result is accompanied by descriptive elements-->
+ <!--<div class="result-loading" style="display: flex; flex-direction: column; align-items: center; justify-content: center; position: absolute; left: 50%; transform: translate(-50%, 0); padding: 40px; text-align: center; width: 100%; box-sizing: border-box;">
+        <span class="fa-solid fa-compact-disc fa-spin" style="font-size: 50px; color: #FF0000; margin-bottom: 15px; display: inline-block;"></span>
+        </div>
+        `; -->
 <script src="script.js"></script>
 <script>
     function showResult(){
@@ -58,6 +64,18 @@
         let resultDiv= document.getElementById ("result");
 
         const outcomes= {
+            "A-U": [
+                {
+                    title: "La Voyage dans la Lune (A Trip to the Moon)",
+                    image: "images/moon.jpg",
+                    year: "1902",
+                    runtime: "13 min",
+                    director: "Georges M&eacute;li&egrave;s",
+                    starring:"Georges M&eacute;li&egrave;s, Victor Andr&eacute;, Bleuette Bernon, Henry Delannoy, Fran&ccedil;ois Lallement, Jules-Eug&egrave;ne Legris",
+                    description:"A group of astronauts journey to the moon, facing a kingdom of strange aliens preventing their return to Earth."
+                }
+            ],
+
             "A-V": [
                 {
                     image: "images/littlewomen.jpg",
@@ -65,6 +83,7 @@
                     year: "1949",
                     runtime: "122 min",
                     starring: "June Allyson, Peter Lawford, Margaret O'Brien, Elizabeth Taylor, Janet Leigh, Rossano Brazzi, and Mary Astor",
+                    director: "Mervyn LeRoy",
                     description: "An adaptation of Louisa May Alcott's coming-of-age novel, the four March sisters navigate love and loss in Civil War-era New England."
                 },
                 {
@@ -73,7 +92,18 @@
                     year: "1964",
                     runtime: "170 min",
                     starring: "Audrey Hepburn, Rex Harrison, and Stanley Holloway",
-                    description: "In a musical adaptation of George Bernard Shaw’s 'Pygmalion,' a snobby phonetician endeavours to teach a lower-class flower girl how to be presentable in high society on a wager."
+                    director: "George Cukor",
+                    description: "In a musical adaptation of George Bernard Shaw’s <i> Pygmalion</i>, a snobby phonetician endeavours to teach a lower-class flower girl how to be presentable in high society on a wager."
+                },
+                {
+                    title: "The Wizard of Oz",
+                    year: "1939",
+                    runtime: "102 min",
+                    starring: "Judy Garland, Frank Morgan, Ray Bolger, Bert Lahr, Jack Haley, Billie Burke, Margaret Hamilton, Charley Grapewin, The Munchkins, and Terry (as Toto)",
+                    director: "Victor Fleming",
+                    description: "Transported by a tornado to the magical Land of Oz, Dorothy and her dog, Toto, journey across the yellow brick road, finding companions and the true meaning of home along the way",
+                    image: "images/wizardofoz.jpg",
+
                 }
             ],
            
@@ -83,6 +113,7 @@
                     year: "1957",
                     runtime: "103 min",
                     starring: "Audrey Hepburn, Fred Astaire, and Kay Thompson",
+                    director: "Stanley Donen",
                     description: "A serendipitous photo shoot results in a plain bookshop clerk’s discovery as a model.",
                     image: "images/funnyface.jpg"
                 },
@@ -91,9 +122,10 @@
                     year: "1961",
                     runtime: "115 min",
                     starring: "Audrey Hepburn, George Pappard, Patricia Neal, Buddy Ebsen, Martin Balsam, and Mickey Rooney",
+                    director: "Blake Edwards",
                     description: "Based on Truman Capote’s novella of the same name, a young man moves to New York City and quickly becomes interested in the eccentric young socialite with a mysterious past living in his building.",
                     image: "images/tiffanys.jpg"
-                }
+                },
             ],
           
             "A-X": [
@@ -102,6 +134,7 @@
                     year: "1954",
                     runtime: "113 min",
                     starring: "Humphrey Bogart, Audrey Hepburn, and William Holden",
+                    director: "Billy Wilder",
                     description: "Daughter of the wealthy Larrabee family’ chauffeur, Sabrina finds herself hopelessly in love with David, the younger, playboy son. After returning home from school in Paris, she attracts David’s attention but finds herself getting closer to his older, more serious brother.",
                     image: "images/sabrina.jpg"
 
@@ -110,9 +143,28 @@
                     title: "Roman Holiday",
                     year: "1953",
                     runtime: "118 min",
-                    starring: "Gregory Peck, Audrey Hepburn, and Eddie Albert",
+                    starring: "Gregory Peck, Audrey Hepburn, and Eddie Albery",
+                    director: "William Wyler",
                     description:"A curious and sheltered princess escapes the confines of her strict routine and obligations, exploring the streets of Rome with an American newspaper man, as he covertly gathers information for an article about her.",
                     image: "images/holiday.jpg"
+                },
+                {
+                    title: "Sleeping Beauty",
+                    year: "1959",
+                    runtime: "75 min",
+                    image: "images/sleepingbeauty.jpg",
+                    director: "Clyde Geronimi, Eric Larson, Wolfgang Reitherman, and Les Clark",
+                    starring: "Mary Costa, Bill Shirley, Eleanor Audley, Verna Felton, Barbara Luddy, Barbara Jo Allen, Taylor Holmes, and Bill Thompson",
+                    description: "An evil fairy places a curse upon Princess Aurora, leading her to fall into a deep, enchanted sleep that can only be broken by true love’s kiss."
+                },
+                {
+                    title: "Grease",
+                    year: "1978",
+                    runtime: "105 min",
+                    image: "images/grease.jpg",
+                    director: "Randal Kleiser",
+                    starring: "John Travolta, Olivia Newton-John, Stockard Channing, Jeff Conaway, Didi Conn, Barry Pearl, Michael Tucci, Kelly Ward, Jamie Donnelly, Dinah Manoff, Eve Arden, Frankie Avalon, Joan Blondell, Edd Byrnes, Sid Caesar, Alice Ghostley, Dody Goodman, Sha-Na-Na",
+                    description: "After a summer fling, Sandy and Danny unexpectedly attend the same high school, forcing them to navigate their identities amongst their peers and with each other.",
                 }
             ],
            
@@ -121,7 +173,8 @@
                         title: "Charade",
                         year: "1963",
                         runtime: "113 min",
-                        starring: "Carey Grant, Audrey Hepburn, and Walter Mattahu",
+                        starring: "Carey Grant, Audrey Hepburn, and Walter Matthau",
+                        director: "Stanley Donen",
                         description:"A widow is pursued by several men searching for the fortune her murdered husband stole.",
                         image: "images/charade.jpg"
                     },
@@ -130,6 +183,7 @@
                         year: "1920",
                         runtime: "76 min",
                         starring: "Werner Krauss, Conrad Veidt, and Friedrich Feher",
+                        director: "Robert Wiene",
                         description: "A young man recalls the story of an insane hypnotist who committed murders through a brainwashed somnambulist who can see the future.",
                         image:"images/caligari.jpg"
                     }                 
@@ -141,6 +195,7 @@
                     year: "1963",
                     runtime: "172 min",
                     starring: "Steve McQueen, James Garner, and Richard Attenborough",
+                    director: "John Sturges",
                     description: "Inspired by real events, a group of master escape artists plot to break out of a German POW camp during the height of World War II.",
                     image: "images/escape.jpg"
                 },
@@ -149,18 +204,33 @@
                     year: "1950",
                     runtime: "113 min",
                     starring: "Jose Ferrer, Mala Powers, and Carl Foreman",
+                    director: "Michael Gordon",
                     description: "A gifted swordsman and poet assists a young guardsman in winning the affections of the woman he loves.",
                     image: "images/cyrano.jpg"
-                }
+                },
+                {
+                    title: "The Sound of Music",
+                    year: "1965",
+                    runtime: "174 min",
+                    image: "images/soundofmusic.jpg",
+                    starring: "Julie Andrews, Christopher Plummer, Eleanor Parker, Richard Haydn, Peggy Wood, and Charmian Carr", 
+                    director: "Robert Wise",
+                    //Heather Menzies, Nicholas Hammond, Duane Chase, Angela Cartwright, Debbie Turner, Kym Karath, Anna Lee, Portia Nelson, Ben Wright, Daniel Truhitte, Norma Varden, Gilchrist Stuart
+                    description: "A  rebellious young nun is sent to work as a governess to the seven children of a widowed naval officer in 1930s Salzburg, Austria.",
+                }      
+            ],
+
+            "B-U": [
                 
             ],
 
             "B-V": [
                 {
-                    title:"Rebel without a Cause",
+                    title:"Rebel Without a Cause",
                     year: "1955",
                     runtime: "111 min",
                     starring: "James Dean, Natalie Wood, Sal Mineo, Corey Allen, and Dennis Hopper",
+                    director: "Nicholas Ray",
                     description:"After falling for the girlfriend of the neighbourhood tough guy, a sympathetic, American teenage rebel becomes involved with other middle-class youths over the course of a turbulent night that exposes generational conflicts and social alienation.",
                     image: "images/rebelcause.jpg"
                 },
@@ -169,6 +239,7 @@
                     year: "1961",
                     runtime: "93 min",
                     starring: "Sandro Panseri and Loredana Detto",
+                    director: "Ermanno Olmi",
                     description: "An Italian teenager begins working at a large corporate office in Milan, facing disillusionment and lost identity.",
                     image: "images/ilposto.jpg"
                 }  
@@ -180,7 +251,8 @@
                     year: "1950",
                     runtime: "110 min",
                     starring: "William Holden, Gloria Swanson, and Erich von Stroheim",
-                    description:"A fallen film star determined to return to her previous celebrity hires a screenwriter to relaunch her career, revealing the underbelly of Hollywood glitz and glamour.",
+                    director: "Billy Wilder",
+                    description:"A fallen film star, determined to return to her previous celebrity, hires a screenwriter to relaunch her career, revealing the underbelly of Hollywood glitz and glamour.",
                     image: "images/sunset.jpg"  
                 },
                 {
@@ -188,9 +260,19 @@
                     year: "1957",
                     runtime: "96 min",
                     starring: "Henry Fonda, Lee J. Cobb, Ed Begley, E.G. Marshall, and Jack Warden",
+                    director: "Sidney Lumet",
                     description: "A New York City jury panel is tasked with unanimously coming to a verdict for a murder trial.",
                     image: "images/angrymen.jpg" 
-                }
+                },
+                {
+                    title: "Planet of the Apes",
+                    year: "1968",
+                    runtime: "110 min",
+                    image: "images/planet.jpg",
+                    director: "Franklin J. Schaffner",
+                    starring: "Charlton Heston, Roddy McDowall, Kim Hunter, Maurice Evans, James Whitemore, James Daly, Linda Harrison, Robert Gunner, Lous Wagner, Woodreow Parfrey, Jeff Burton, and Buck Kartalian",
+                    description: "After waking from a hypersleep on a crashing spaceship, an astronaut crew discovers a strange planet ruled by intelligent apes."
+                } 
             ],
           
             "B-X": [
@@ -199,6 +281,7 @@
                     year: "1944",
                     runtime: "107 min",
                     starring: "Barbara Stanwyck, Fred MacMurray, Edward G. Robinson, Porter Hall, Jean Heather, Byron BArr, Richard Gaines, and John Philliber",
+                    director: "Billy Wilder",
                     description: "A dissatisfied housewife manipulates an insurance agent into carrying out insurance fraud and murder.",
                     image: "images/doubleindemnity.jpg"
                 },
@@ -207,6 +290,7 @@
                     year: "1941",
                     runtime: "101 min",
                     starring: "Humphey Bogart, Mary Astor, and Gladys George",
+                    director: "John Huston",
                     description:"At the request of a femme fatale, a private detective agrees to search for a priceless statuette, entangling him in a world of lies and murder.",
                     image: "images/falcon.jpg"
                 }
@@ -218,6 +302,7 @@
                     year: "1954",
                     runtime: "112 min",
                     starring: "James Stewart, Grace Kelly, and Raymond Burr",
+                    director: "Alfred Hitchcock",
                     description: "After breaking his leg, a bored photographer entertains himself by observing his neighbours, only to suspect one of them of murder.",
                     image: "images/rearwindow.jpg"
                 },
@@ -226,8 +311,19 @@
                     year: "1960",
                     runtime: "109 min",
                     starring: "Anthony Perkins, Janet Leigh, and Vera Miles",
+                    director: "Alfred Hitchcock",
                     description: "On the lam for embezzlement, a secretary stays at an isolated motel owned by a disturbed man and his controlling mother.",
                     image: "images/psycho.jpg"
+                },
+
+                {
+                    title: "Rope",
+                    year: "1948",
+                    runtime: "80 min",
+                    starring: "James Stewart, John Dall, Farley Granger, Sir Cedric Hardwicke, Constance Collier, and Joan Chandler",
+                    director: "Alfred Hitchcock",
+                    description: "After murdering their former schoolmate as a perverse demonstration of superiority and commission of the 'perfect crime,' two young men host a dinner party with the body hidden in the same apartment.",
+                    image: "images/rope.jpg"
                 }
             ],
           
@@ -237,6 +333,7 @@
                     year: "1964",
                     runtime: "95 min",
                     starring: "Peter Sellers, George C. Scott, Sterling Hayden-Keenan, and Slim Pickens",
+                    director: "Stanley Kubrick",
                     description: "A war room full of politicians and generals frantically try to stop the threat of global nuclear holocaust as an American general maniacally unravels.",
                     image: "images/drstrangelove.jpg"
                 },
@@ -247,6 +344,15 @@
                     starring: "Aleksandr Antonov, Vladimir Barsky, and Grigori Aleksandrov",
                     description: "Based on historical events, a battleship crew mutiny against their vessel officers in an unsuccessful attempt to spark a revolt in Odessa.",
                     image: "images/potemkin.jpg"
+                },
+                {
+                    title: "Apocalypse Now",
+                    year: "1979",
+                    runtime: "153 min",
+                    director: "Francis Ford Coppola",
+                    starring:"Marlon Brando, Robert Duvall, Martin Sheen, Frederic Forrest, Albert Hall, Sam Bottoms, Laurence Fishburne, and Dennis Hopper",
+                    description: "During the Vietnam War, Captain Willard is sent to assassinate the rogue Colonel Kurtz, who has since established himself as a god-like figure in the Cambodian jungle.",
+                    image: "images/apocalypse.jpg"
                 }
             ],
 
@@ -256,7 +362,8 @@
                     year: "1962",
                     runtime: "129 min",
                     starring: "Gregory Peck, John Megna, and Frank Overton",
-                    description: "Adapted from Harper Lee’s best-selling novel set in Depression-era Alabama, <i> To Kill a Mockingbird </i> follows widowed lawyer’s controversial defense of a black man facing false rape charges through the eyes of a young girl.",
+                    director: "Robert Mulligan",
+                    description: "Adapted from Harper Lee’s best-selling novel set in Depression-era Alabama, <i> To Kill a Mockingbird </i> follows a widowed lawyer’s controversial defense of a black man facing false rape charges through the eyes of a young girl.",
                     image: "images/mockingbird.jpg"
                 }, 
                 {
@@ -264,6 +371,7 @@
                     year: "1957",
                     runtime: "83 min",
                     starring: "Dorothy McGuire and Fess Parker",
+                    director: "Robert Stevenson",
                     description: "In postbellum Texas, a teenage boy grows close to a stray, yellow dog while his father is away on a cattle drive, leaving him to tend to their ranch.",
                     image: "images/oldyeller.jpg" 
                 }
@@ -275,6 +383,7 @@
                     year: "1962",
                     runtime: "90 min",
                     starring: "Corrine Marchand and Antoine Bourseiller",
+                    director: "Agnes Varda",
                     description: "Intimately unfolding in near real time, a hypochondriacal singer anxiously waits for her biopsy test results.",
                     image: "images/cleo.jpg"
                 },
@@ -283,6 +392,7 @@
                     year: "1941",
                     runtime: "119 min",
                     starring: "Orsen Welles, Joseph Cotten, and Dorothy Comingore",
+                    director: "Orsen Welles",
                     description: "Reporters struggle to decipher the meaning behind a publishing tycoon’s final words.",
                     image: "images/kane.jpg"
                 }
@@ -294,6 +404,7 @@
                     year: "1964",
                     runtime: "91 min",
                     starring: "Catherine Deneuve, Nino Castelnuovo, Anne Vernon, Marc Michel, and Ellen Farner",
+                    director: "Jacques Demy",
                     description: "Through spoken-song, a young woman is separated from her lover when he is sent to fight in Algeria, forcing her to make a decision that permanently alters both of their lives.",
                     image: "images/parapluies.jpg"
                 },
@@ -302,10 +413,10 @@
                     year: "1961",
                     runtime: "153 min",
                     starring: "Natalie Wood, Richard Beymer, Russ Tamblyn, Rita Moreno, and George Chakiris",
+                    director: "Robert Wise and Jerome Robbins",
                     description: "When Tony and Maria fall in love, they must face the growing tensions between the rival gangs they are associated with in a musical retelling of <i>Romeo and Juliet </i>.",
                     image: "images/westside.jpg"
                 }
-            
             ],
             
             "C-Y": [
@@ -314,6 +425,7 @@
                     year: "1943",
                     runtime: "14 min",
                     starring: "Maya Deren and Alexandr Hackenschmied",
+                    director : "Maya Deren and Alexandr Hackenschmied",
                     description: "The limitations of time, space, and reality are pushed as a woman enters a dreamscape, interacting with mysterious figures and herself.",
                     image: "images/meshes.jpg"
                 },
@@ -322,17 +434,28 @@
                     year: "1928",
                     runtime: "40 min",
                     starring: "Alex Allin, Lucien Bataille, and Genica Athanasiou",
+                    director: "Germaine Dulac",
                     description: "Through a kaleidoscopic and nonsensical series of scenes portraying a disturbing melange of death and eroticism, a clergyman struggles with his lust for a military officer's wife.",
                     image: "images/seashell.jpg"
+                },
+                {
+                    title: "Vertigo",
+                    year: "1958",
+                    runtime: "129 min",
+                    starring: "James Stewart, Kim Novak, Barbara Bel Geddes, Tom Helmore, and Henry Jones",
+                    director: "Alfred Hitchcock",
+                    description: "An acrophobic former detective is haunted by a mysterious and captivating woman who fell to her death while he was investigating her.",
+                    image: "images/vertigo.jpg",
                 }
             ],
             
             "C-Z": [
                 {
-                    title: "Gone With the Wind",
+                    title: "Gone with the Wind",
                     year: "1939",
                     runtime: "238 min",
                     starring: "Clark Gable, Vivien Leigh, Leslie Howard, and Olivia de Havilland",
+                    director: "Victor Fleming",
                     description: "As the Civil War destroys the societal foundation of Georgia, a spoiled and manipulative Southern belle navigates death and loss of innocence through poverty and complicated love affairs as she attempts to rebuild her life.",
                     image: "images/gonewind.jpg"
                 },
@@ -341,41 +464,63 @@
                     year: "1942",
                     runtime: "102 min",
                     starring: "Humphrey Bogart, Ingrid Bergman, and Paul Henreid",
+                    director: "Michael Curtiz",
                     description: "An expatriate American cafe owner in French Morocco confronts his feelings for his former lover as he decides if he should help her husband, Czechoslovak resistance leader, escape the Nazis.",
                     image: "images/casablanca.jpg"
                 }
-            ]
-            
+            ] 
           };
-        
-          let key = `${value1}-${value2}`;
-          if (outcomes [key]){
-            let randomIndex = Math.floor(Math.random() *2);
-            let chosenResult=outcomes [key][randomIndex];
+
+           let key = `${value1}-${value2}`;
+             resultDiv.innerHTML = `
+       <div class="film-reel">
+        <svg class="custom-spinner" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 247.33 250.91">
+            <path fill="red" d="M236.52,207.68c-.11-4.08-1.02-29.45-13.46-43.73-1.71-1.96-4.99-5.73-10.61-8.46-7.77-3.78-15.17-3.23-17.48-3.04-2.98.26-5.23.85-6.06,1.09-4.87,1.38-8.43,3.65-10.59,5.29,6.34-12.22,9.93-26.09,9.93-40.81,0-49-39.72-88.72-88.72-88.72S10.81,69.02,10.81,118.02c0,37.01,22.66,68.72,54.87,82.02,0,0,0,0,0,0,.05.02.1.04.16.06,6.06,2.36,10.23,3.49,10.23,3.49,0,0,3.18.89,6.85,1.59,15.35,2.91,31.51.15,31.51.15,6.74-1.15,11.9-2.82,14.57-3.76,2.48-.87,6.12-2.28,10.34-4.4,2.85-1.43,5.19-2.61,8.14-4.65,3.34-2.31,3.4-2.91,5-3.47,4.02-1.39,6.28,1.5,10.62,1.91,6.72.65,8.52-5.57,18.15-8.72,3.13-1.02,9.19-2.91,14.91-.84,9.33,3.37,12.28,16.27,14.59,26.25,2.17,9.43,2.11,17.5,1.72,22.82,8.02-7.6,16.04-15.21,24.07-22.81ZM230.52,187.55c.63,2.14,1.21,4.48,1.7,7.01.71,3.69,1.08,7.09,1.25,10.11.03.47-.16.92-.51,1.23-4.89,4.42-9.78,8.84-14.67,13.26-.99.89-2.57.22-2.59-1.12-.06-3.06-.3-6.46-.85-10.12-.53-3.55-1.26-6.76-2.05-9.6-.18-.65.07-1.34.63-1.71l14.73-9.9c.87-.59,2.06-.16,2.36.85ZM99.52,41.38c13.07,0,23.67,10.6,23.67,23.67s-10.6,23.67-23.67,23.67-23.67-10.6-23.67-23.67,10.6-23.67,23.67-23.67ZM25.83,101.55c0-13.07,10.6-23.67,23.67-23.67s23.67,10.6,23.67,23.67-10.6,23.67-23.67,23.67-23.67-10.6-23.67-23.67ZM68.72,184.26c-13.07,0-23.67-10.6-23.67-23.67s10.6-23.67,23.67-23.67,23.67,10.6,23.67,23.67-10.6,23.67-23.67,23.67ZM99.52,126.06c-4.53,0-8.2-3.67-8.2-8.2s3.67-8.2,8.2-8.2,8.2,3.67,8.2,8.2-3.67,8.2-8.2,8.2ZM130.69,184.26c-13.07,0-23.67-10.6-23.67-23.67s10.6-23.67,23.67-23.67,23.67,10.6,23.67,23.67-10.6,23.67-23.67,23.67ZM149.91,125.21c-13.07,0-23.67-10.6-23.67-23.67s10.6-23.67,23.67-23.67,23.67,10.6,23.67,23.67-10.6,23.67-23.67,23.67ZM191.56,175.74c-.23.31-.55.52-.93.6-3.67.75-8.42,2.12-13.57,4.72-2.25,1.14-4.26,2.35-6.03,3.55-1.27.87-2.88-.47-2.27-1.88l8.85-20.45c.11-.25.28-.47.5-.63,3.14-2.26,9.54-6.13,18.29-6.59,2.67-.14,5.08.06,7.16.4,1.13.19,1.65,1.5.98,2.42-4.33,5.95-8.65,11.9-12.98,17.85ZM211.97,191.39c-.85.54-1.98.14-2.29-.82-.66-2.07-1.99-5.02-4.68-7.72-2.37-2.38-4.92-3.68-6.81-4.39-.95-.36-1.28-1.54-.67-2.36,4.24-5.65,8.48-11.29,12.72-16.94.51-.68,1.47-.82,2.15-.31,3.9,2.93,8.85,7.52,12.8,14.27,1.3,2.23,2.32,4.39,3.12,6.4.27.68,0,1.45-.61,1.85-5.24,3.34-10.49,6.68-15.73,10.02Z"/>
+    </svg>     
+    </div>
+    `;
+           setTimeout(()=>{
+          if (outcomes[key] && outcomes[key].length > 0){
+            let randomIndex = Math.floor(Math.random() * outcomes[key].length);
+            let chosenResult= outcomes[key][randomIndex];
             //the math.random is set to pick from 2 since there are only 2 potential results for each pair of values, but if/when the website is updated to include more potential films I will change this to outcomes[key].length
             
             resultDiv.innerHTML = `
             <div class="result-item">
-                <img src="${chosenResult.image}" class="result-image" />
+                ${chosenResult.image ?` <img src="${chosenResult.image}"  class="result-image" />`:''}
                 <div class="result-text">
-                    <h2 class="result-title">${chosenResult.title}</h2>
-                    <h3 class="result-year">${chosenResult.year}</h3>
-                    <h4 class="result-starring"> <i class= "fas fa-star" style="font-size: 14px"> </i> ${chosenResult.starring}</h4>
-                    <h5 class="result-runtime"><i class="fas fa-clock" style= "font-size: 14px"> </i> ${chosenResult.runtime}</h5>
-                    <p class="result-description"> <i class="fas fa-film" style= "font-size: 14px"> </i> ${chosenResult.description}</p>
+                    <h2 class="result-title">${chosenResult.title ?? ''}</h2>
+                    <h3 class="result-year">${chosenResult.year ?? ''}</h3>
+                    ${chosenResult.starring ? `
+                        <h4 class="result-starring"> <i class= "fas fa-star" style="font-size: 18px"> </i> ${chosenResult.starring}</h4>
+                    `:''}
+                    ${chosenResult.director ? `
+                        <h4 class="result-director"> <i class="fa fa-video-camera" aria-hidden="true" style="font-size: 18px"> </i> ${chosenResult.director}</h4>
+                    `:''}
+                    
+                    ${chosenResult.runtime ? `
+                        <h5 class="result-runtime"> <i class="fas fa-clock" style="font-size: 18px"> </i> ${chosenResult.runtime} </h5>
+                    `:''}
+                    
+                    ${chosenResult.description ?`
+                        <p class="result-description"> <i class="fas fa-film" style="font-size: 18px"> </i> ${chosenResult.description}</p>
+                    `:''}
+                    
                 </div>
             </div>
         `;
         // each descriptive element is preceded by an icon that intuitively describes the descriptive element, the icon formats are styled inline here for no particular reason
 
     } else {
-        resultDiv.textContent = "Please choose a mood and a genre";
+        resultDiv.innerHTML = `
+        <div class="result-error" style="text-align: center; padding: 20px;"> 
+            <p> <i class= "fas fa-exclamation-triangle" style="font-size: 36px; color: #ccc; "></i> We're not done watching movies! Come back later for a suggestion. Please choose a different mood or genre. </p>
+        </div>
+      `;
+
     }
-    // hideSpinner();
-         // hideSpinner is from a failed animation attempt
-    }
+    }, 1200);
+}
+        
 </script>     
 </body>
-
-
-

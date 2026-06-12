@@ -269,6 +269,8 @@ select:hover{
 
     .button-container {
         margin-bottom: 0px;
+        display: flex;
+        justify-content:flex-end;
     }
     
     }

@@ -351,7 +351,7 @@ select:hover{
 
     .film-reel {
     position: flex;
-    top: 65%;
+    top: 67%;
     left: 50%;
     /*transform: translate(-50%, -50%);*/
     display: flex;
@@ -360,8 +360,8 @@ select:hover{
     }
 
     .custom-spinner{
-        width: 115px;
-        height: 110px;
+        width: 125px;
+        height: 120px;
         display: inline-block;
         vertical-align: middle;
         animation: custom-spin 1.2s linear infinite;

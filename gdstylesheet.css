@@ -269,6 +269,12 @@ select:hover{
 
     .button-container {
         padding-right: 10%;
+        display: flex;
+        justify-content:flex-end;
+        margin-top: 10px;
+        margin-bottom: 0px;
+    }
+    
     }
 
     .button {

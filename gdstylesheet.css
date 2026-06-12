@@ -223,6 +223,10 @@ select:hover{
     max-width: 1000px;
 }
 
+.result-error{
+    margin: auto;
+}
+
 .film-reel {
     position: absolute;
     top: 50%;
